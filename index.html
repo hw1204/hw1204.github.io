@@ -45,14 +45,10 @@
 
     /* 이미지 영역 */
     .portfolio-item img {
-        /* 기존: width: 100%; max-width: 300px; object-fit: cover; */
-
-        /* 가로 너비를 고정하고, 높이는 부모(.portfolio-item) 전체 높이로 설정 */
-        flex: 0 0 300px;  /* 왼쪽 영역 너비를 300px(또는 원하는 값)으로 고정 */
-        height: 100%;     /* 부모 높이를 전부 채움 */
-        object-fit: cover;
-        object-position: center;
-        background-color: #ddd; 
+      width: 100%;
+      max-width: 300px; /* 이미지 너비 제한 */
+      object-fit: cover;
+      background-color: #ddd; /* 이미지가 없을 경우 배경 색상 */
     }
 
     /* 내용 영역 */
