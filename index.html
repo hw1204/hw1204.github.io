@@ -44,17 +44,17 @@
     }
 
     /* 이미지 영역 */
-    .portfolio-item {
-        display: flex;
-        flex-wrap: wrap;
-        /* 기존: align-items: flex-start; -> 변경 */
-        align-items: stretch; 
-        background-color: #fff;
-        border-radius: 8px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        margin-bottom: 30px;
-        overflow: hidden;
+    .portfolio-item img {
+        /* 기존: width: 100%; max-width: 300px; object-fit: cover; */
+
+        /* 가로 너비를 고정하고, 높이는 부모(.portfolio-item) 전체 높이로 설정 */
+        flex: 0 0 300px;  /* 왼쪽 영역 너비를 300px(또는 원하는 값)으로 고정 */
+        height: 100%;     /* 부모 높이를 전부 채움 */
+        object-fit: cover;
+        object-position: center;
+        background-color: #ddd; 
     }
+
     /* 내용 영역 */
     .portfolio-content {
       flex: 1; 
