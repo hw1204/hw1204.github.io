@@ -33,14 +33,15 @@
 
     /* 포트폴리오 아이템 목록 */
     .portfolio-item {
-      display: flex;
-      flex-wrap: wrap; /* 화면 크기에 따라 자동 줄바꿈 */
-      align-items: flex-start;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      margin-bottom: 30px;
-      overflow: hidden;
+        display: flex;
+        flex-wrap: wrap; /* 화면 크기에 따라 자동 줄바꿈 */
+        align-items: stretch; /* 높이 자동 맞춤 */
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        margin-bottom: 30px;
+        overflow: hidden;
+        min-height: 140px; /* 1번째 카드 기준으로 원하는 최소 높이 설정 */
     }
 
     /* 이미지 영역 */
