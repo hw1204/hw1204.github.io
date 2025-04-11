@@ -33,15 +33,14 @@
 
     /* 포트폴리오 아이템 목록 */
     .portfolio-item {
-        display: flex;
-        flex-wrap: wrap; /* 화면 크기에 따라 자동 줄바꿈 */
-        align-items: stretch; /* 높이 자동 맞춤 */
-        background-color: #fff;
-        border-radius: 8px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        margin-bottom: 30px;
-        overflow: hidden;
-        min-height: 140px; /* 1번째 카드 기준으로 원하는 최소 높이 설정 */
+      display: flex;
+      flex-wrap: wrap; /* 화면 크기에 따라 자동 줄바꿈 */
+      align-items: flex-start;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+      overflow: hidden;
     }
 
     /* 이미지 영역 */
@@ -132,6 +131,22 @@
     </div>
 
   </div>
-
+  <script>
+    // 함수: 첫 번째 portfolio-item 요소의 높이를 기준으로 모두 같게 적용
+    function matchPortfolioHeight(){
+      const firstBox = document.querySelector('.portfolio-item');
+      if (!firstBox) return;
+      const firstHeight = firstBox.offsetHeight;
+      
+      // 모든 portfolio-item에 같은 높이 적용
+      document.querySelectorAll('.portfolio-item').forEach(item => {
+        item.style.height = firstHeight + 'px';
+      });
+    }
+  
+    // 페이지 로드와 창 크기 변경 시 실행하도록 이벤트 등록
+    window.addEventListener('load', matchPortfolioHeight);
+    window.addEventListener('resize', matchPortfolioHeight);
+  </script>
 </body>
 </html>
