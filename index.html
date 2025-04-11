@@ -44,13 +44,17 @@
     }
 
     /* 이미지 영역 */
-    .portfolio-item img {
-      width: 100%;
-      max-width: 300px; /* 이미지 너비 제한 */
-      object-fit: cover;
-      background-color: #ddd; /* 이미지가 없을 경우 배경 색상 */
+    .portfolio-item {
+        display: flex;
+        flex-wrap: wrap;
+        /* 기존: align-items: flex-start; -> 변경 */
+        align-items: stretch; 
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        margin-bottom: 30px;
+        overflow: hidden;
     }
-
     /* 내용 영역 */
     .portfolio-content {
       flex: 1; 
